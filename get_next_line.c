@@ -72,6 +72,7 @@ static char *clean_stash(char *stash)
 	else
 	{
 		newline = ft_strchr(stash, '\n');
+		
 		if (newline[1] == '\0')
 		{
 			free(stash);
@@ -86,7 +87,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char	*line;
-
+	
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = read_to_stash(fd, stash);
