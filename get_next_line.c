@@ -87,7 +87,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char	*line;
-	
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash = read_to_stash(fd, stash);
@@ -99,5 +99,11 @@ char	*get_next_line(int fd)
 	}
 	line = extract_line(stash);
 	stash = clean_stash(stash);
+	if (!line)
+	{
+		ft_free(stash, line);
+		stash = NULL;
+		return (NULL);
+	}
 	return (line);
 }
