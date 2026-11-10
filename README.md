@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by trmorand*
+*This project has been created as part of the 42 curriculum by trmorand.*
 # get_next_line
 
 ## Description
