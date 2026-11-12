@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 04:17:56 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/07 06:43:59 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:37:06 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ static char	*read_to_stash(int fd, char *stash)
 		buf[i] = '\0';
 		stash = ft_strjoin(stash, buf);
 		if (!stash)
-			break;
+			break ;
 	}
 	free(buf);
 	return (stash);
 }
 
-static char *extract_line(char *stash)
+static char	*extract_line(char *stash)
 {
-	int	len;
+	int		len;
 	char	*new_stash;
 
-	len= 0;
+	len = 0;
 	while (stash[len] != '\n' && stash[len] != '\0')
 		len++;
 	new_stash = ft_substr(stash, 0, len + 1);
 	return (new_stash);
 }
 
-static char *clean_stash(char *stash)
+static char	*clean_stash(char *stash)
 {
 	char	*res;
 	char	*newline;
@@ -72,7 +72,6 @@ static char *clean_stash(char *stash)
 	else
 	{
 		newline = ft_strchr(stash, '\n');
-		
 		if (newline[1] == '\0')
 		{
 			free(stash);
@@ -83,10 +82,11 @@ static char *clean_stash(char *stash)
 		return (res);
 	}
 }
+
 char	*get_next_line(int fd)
 {
 	static char	*stash;
-	char	*line;
+	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

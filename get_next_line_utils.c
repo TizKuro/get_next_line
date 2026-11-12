@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 03:50:41 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/07 04:03:15 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:38:03 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ char	*ft_substr(char const *s, int start, int len)
 	return (new);
 }
 
-
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -64,8 +63,8 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if((char)c == '\0')
-		return((char *)&s[i]);
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
 	return (0);
 }
 
